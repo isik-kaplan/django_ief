@@ -1,0 +1,15 @@
+language: python
+python:
+- '3.5'
+- '3.6'
+- '3.7'
+install:
+- pip install django
+script:
+- echo
+deploy:
+  provider: pypi
+  user: isik-kaplan
+  skip_existing: true
+  password:
+    secure: Qogogzah2VcmU31c3Xpj4VnfkCrFstjC9RHrPXjGTrxeHSUrS12LMtlnvmHRh8t4DqE6NEJXPPh++FIBMMgxn7UvbsZNPMS+X7WwurXzwq0cTEBPrLR+GYsTODFLCsiMIhH0QO+AuS9tWP9WN+YGOu1gSf7vZF7GAMGcn9KIYiZ991gVnqbTYIesHi1EFtj24jFv9Lmr7S3vhGVATvlLHS/3z40Vg1g75LcoWQBT3Pp6bb7BPIzWfAqVDXkJRTx6ZgTp4KFlLAlTuA51z18rHSUiqmFvMXqKta/ncDYmdEjrBIkUKrDf0I2HFpnGkpvdONKsAVGNqFH3EXzfF0AZ7Ue69ysoB3ejTM9hlSpe4TfGRJ+Wo4KZghutwpZZDhGSRHS7fHJrb+Wr1K2K+4kz07hl1A+0bXw8NQeVaMYJXXJ+8mTIa3cutMDgDaBVSSOG7Qwx5gL55Qhiy8AOjsER8ZdR/kBbl15+OMWXUrFsFdJxs1k4w9TkOh5PAj5nE6Zee2izqZgXqhtShsUooF7PdSlufUoJzxwzdWmjdV1tTwiTzhxGh2BICPszWkg9Su3qvb5LaCfShJEX4s7xNSozvVE39P3aDCG69wClqPG5VbTIUigLhE/AGWkl4OhLF4jaZJTq637ox7kuIxs3/ngHU4KZCvuLZAbYguTVdJR7hsM=
