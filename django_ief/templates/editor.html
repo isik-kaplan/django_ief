@@ -7,11 +7,11 @@
 <script>
 
     const saveData = InlineEditor.makeSaveData(
-        "{% url 'inline_editable_field_text' app=field.app model=field.model field=field.name pk=field.obj_pk%}".substring(2),
+        "{% url 'inline_editable_field_text' app=field.app model=field.model field=field.name pk=field.obj_pk%}",
         InlineEditor.getCSRFCookie()
     );
     const ImageUploadAdapterPlugin = InlineEditor.makeImageUploadAdapterPlugin(
-        "{% url 'inline_editable_field_image' app=field.app model=field.model field=field.name pk=field.obj_pk%}".substring(2),
+        "{% url 'inline_editable_field_image' app=field.app model=field.model field=field.name pk=field.obj_pk%}",
         InlineEditor.getCSRFCookie()
     );
 
