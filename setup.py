@@ -8,10 +8,6 @@ setup(
     version='0.1.0',
     packages=['django_ief', 'django_ief.templatetags'],
     include_package_data=True,
-    package_data={
-        'django_ief.templates': ['*.html'],
-        'django_ief.static.django_ief': ['*.js']
-    },
     url='https://github.com/isik-kaplan/django_ief',
     description="A model field that can be edited without needing a form.",
     long_description=long_description,
