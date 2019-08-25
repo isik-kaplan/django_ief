@@ -44,6 +44,10 @@ class BlogPost_Images(models.Model):
     owner = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
     image = models.ImageField(**kwargs_for_image_field)
 ```
+which you can access with
+```python
+BlogPost.image_model
+```
 
 and creates a text field in the original model which looks like: 
 
@@ -57,6 +61,10 @@ If you want you may interact with those underlying fields and models but you don
 all you need to do is to use one attribute of the `InlineEditableField` in your templates, `rendered`. 
 
 ```html
+<!-- you need to add the actual editor static for it to work --> 
+<script src="{% static 'django_ief/ckeditor.js' %}"></script> 
+<!-- it is just a single file, you now can use any number of fields with the .rendered attribute on the page -->
+    
 {{ obj.content.rendered }}
 ```
 And that's it, everything else is automatically taken care of.
