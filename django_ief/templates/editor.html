@@ -1,0 +1,29 @@
+{% load ief_permission hosts %}
+
+<div class="{{ editor_selector }}">
+    {{ field_content|safe }}
+</div>
+{% csrf_token %}
+<script>
+
+    const saveData = InlineEditor.makeSaveData(
+        "{% url 'inline_editable_field_text' app=field.app model=field.model field=field.name pk=field.obj_pk%}".substring(2),
+        InlineEditor.getCSRFCookie()
+    );
+    const ImageUploadAdapterPlugin = InlineEditor.makeImageUploadAdapterPlugin(
+        "{% url 'inline_editable_field_image' app=field.app model=field.model field=field.name pk=field.obj_pk%}".substring(2),
+        InlineEditor.getCSRFCookie()
+    );
+
+    InlineEditor.create(document.getElementsByClassName("{{ editor_selector }}")[0], {
+        extraPlugins: [ImageUploadAdapterPlugin]
+    })
+        .then(editor => {
+            editor.isReadOnly = !{% can_edit field request %};
+            editor.saveData = saveData;
+        })
+        .catch(err => {
+            console.error(err.stack);
+        });
+
+</script>
