@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
     name='django_ief',
-    version='0.1.0',
+    version='0.1.1',
     packages=['django_ief', 'django_ief.templatetags'],
     include_package_data=True,
     url='https://github.com/isik-kaplan/django_ief',
