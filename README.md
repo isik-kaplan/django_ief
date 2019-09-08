@@ -8,7 +8,7 @@ It is a field for django database models which you don't need any extra forms to
 
 ## How to use it?
 
-First, install the application
+First, install the application and add the urls.
 
 ```python 
 # settings.py 
@@ -18,6 +18,14 @@ installed_apps = [
     'django_ief',
     ...,
 ]
+
+# urls.py
+
+urlpatterns = [
+    path('', include('django_ief.urls')),
+    # others
+]
+
 ```
 
 Then just use it as a field.
